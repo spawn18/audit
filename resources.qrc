@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/CopyIco.png</file>
+        <file>icons/CutIco.png</file>
+        <file>icons/EraseIco.png</file>
+        <file>icons/FadeInIco.png</file>
+        <file>icons/FadeOutIco.png</file>
+        <file>icons/InfoIco.png</file>
+        <file>icons/NewIco.png</file>
+        <file>icons/OpenIco.png</file>
+        <file>icons/PasteIco.png</file>
+        <file>icons/PauseIco.png</file>
+        <file>icons/PlayIco.png</file>
+        <file>icons/ReverseIco.png</file>
+        <file>icons/SaveIco.png</file>
+        <file>icons/StopIco.png</file>
+        <file>icons/ToneIco.png</file>
+        <file>icons/AppIco.png</file>
+        <file>icons/NoiseIco.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Editor</class>
+ <widget class="QMainWindow" name="Editor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>750</width>
+    <height>250</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>750</width>
+    <height>250</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>750</width>
+    <height>250</height>
+   </size>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>AuDit</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/icons/AppIco.png</normaloff>:/icons/AppIco.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="3,0,1,0">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="sizeConstraint">
+     <enum>QLayout::SetDefaultConstraint</enum>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="Track" name="track" native="true">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>750</width>
+        <height>150</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>IBeamCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>10</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="menuLayout" stretch="0,1,1,1,1,1,0,0">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="time">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>16</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>hh:mm:ss:ms:mc</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	background:#EAEAEA;
+	border-radius:10px;
+}</string>
+        </property>
+        <property name="text">
+         <string>00:00:00:000</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::PlainText</enum>
+        </property>
+        <property name="scaledContents">
+         <bool>false</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stop">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>75</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+ 	border-top-left-radius: 10px;
+	border-bottom-left-radius:10px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f6f7fa, stop: 1 #dadbde);
+	border:none;
+}
+
+QPushButton:hover
+{
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0.25 #f6f7fa, stop: 1 #dadbde);
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/icons/StopIco.png</normaloff>:/icons/StopIco.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>50</width>
+          <height>50</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="toggle">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>75</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+
+    border-top-right-radius: 10px;
+	border-bottom-right-radius:10px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f6f7fa, stop: 1 #dadbde);
+}
+
+QPushButton:hover
+{
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0.25 #f6f7fa, stop: 1 #dadbde);
+}
+
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="resources.qrc">
+          <normaloff>:/icons/PlayIco.png</normaloff>
+          <normalon>:/icons/PauseIco.png</normalon>:/icons/PlayIco.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>50</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QSlider" name="volume">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QSlider::groove:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);
+    left: 4px; right: 4px;
+	height:25px;
+	border-radius:5px;
+}
+
+QSlider::handle:horizontal {
+	width:15px;
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f6f7fa, stop: 1 #dadbde);
+}
+
+QSlider::handle:horizontal:hover
+{
+background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0.25 #f6f7fa, stop: 1 #dadbde);
+}
+
+QSlider::add-page:horizontal {
+    background: #444444;
+	border-radius:5px;
+}
+
+QSlider::sub-page:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #879EFF, stop:1 #7E81E5);
+	border-radius:5px;
+}
+
+QSlider::sub-page:horizontal:disabled {
+    background: #AAAAAA;
+	border-radius:5px;
+}
+
+QSlider::add-page:horizontal:disabled {
+    background: #CCCCCC;
+	border-radius:5px;
+}
+</string>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="singleStep">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <number>50</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="invertedControls">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer1">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>10</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>750</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>true</bool>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="styleSheet">
+     <string notr="true">QMenu
+{
+	border: 0px;
+}</string>
+    </property>
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionProps"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="styleSheet">
+     <string notr="true">QMenu
+{
+	border: 0px;
+}</string>
+    </property>
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+    <addaction name="actionCut"/>
+    <addaction name="actionErase"/>
+   </widget>
+   <widget class="QMenu" name="menuEffects">
+    <property name="styleSheet">
+     <string notr="true">QMenu
+{
+	border: 0px;
+}</string>
+    </property>
+    <property name="title">
+     <string>Effects</string>
+    </property>
+    <widget class="QMenu" name="menuGenerate_tone">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="title">
+      <string>Generate tone</string>
+     </property>
+     <property name="icon">
+      <iconset resource="resources.qrc">
+       <normaloff>:/icons/ToneIco.png</normaloff>:/icons/ToneIco.png</iconset>
+     </property>
+     <addaction name="actionC"/>
+     <addaction name="actionD"/>
+     <addaction name="actionE"/>
+     <addaction name="actionF"/>
+     <addaction name="actionG"/>
+     <addaction name="actionA"/>
+     <addaction name="actionH"/>
+    </widget>
+    <addaction name="menuGenerate_tone"/>
+    <addaction name="actionReverse"/>
+    <addaction name="actionFade_in"/>
+    <addaction name="actionFade_out"/>
+    <addaction name="actionWhite_noise"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuEffects"/>
+  </widget>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/OpenIco.png</normaloff>:/icons/OpenIco.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/SaveIco.png</normaloff>:/icons/SaveIco.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionProps">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/InfoIco.png</normaloff>:/icons/InfoIco.png</iconset>
+   </property>
+   <property name="text">
+    <string>Properties</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/CopyIco.png</normaloff>:/icons/CopyIco.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/CutIco.png</normaloff>:/icons/CutIco.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cut</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionC">
+   <property name="text">
+    <string>C⁴</string>
+   </property>
+  </action>
+  <action name="actionD">
+   <property name="text">
+    <string>D⁴</string>
+   </property>
+  </action>
+  <action name="actionE">
+   <property name="text">
+    <string>E⁴</string>
+   </property>
+  </action>
+  <action name="actionF">
+   <property name="text">
+    <string>F⁴</string>
+   </property>
+  </action>
+  <action name="actionG">
+   <property name="text">
+    <string>G⁴</string>
+   </property>
+  </action>
+  <action name="actionA">
+   <property name="text">
+    <string>A⁴</string>
+   </property>
+  </action>
+  <action name="actionH">
+   <property name="text">
+    <string>H⁴</string>
+   </property>
+  </action>
+  <action name="actionReverse">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/ReverseIco.png</normaloff>:/icons/ReverseIco.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reverse track</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/PasteIco.png</normaloff>:/icons/PasteIco.png</iconset>
+   </property>
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionFade_in">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/FadeInIco.png</normaloff>:/icons/FadeInIco.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fade in</string>
+   </property>
+  </action>
+  <action name="actionFade_out">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/FadeOutIco.png</normaloff>:/icons/FadeOutIco.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fade out</string>
+   </property>
+  </action>
+  <action name="actionErase">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/EraseIco.png</normaloff>:/icons/EraseIco.png</iconset>
+   </property>
+   <property name="text">
+    <string>Erase</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="actionWhite_noise">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/NoiseIco.png</normaloff>:/icons/NoiseIco.png</iconset>
+   </property>
+   <property name="text">
+    <string>White noise</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Track</class>
+   <extends>QWidget</extends>
+   <header>Track.hpp</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+ <slots>
+  <slot>newFile()</slot>
+  <slot>openFile()</slot>
+  <slot>about()</slot>
+  <slot>saveFile()</slot>
+ </slots>
+</ui>
