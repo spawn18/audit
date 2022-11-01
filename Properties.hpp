@@ -16,7 +16,7 @@ class Properties : public QDialog
 
 public:
     explicit Properties(QWidget *parent = nullptr);
-    ~Properties();
+            ~Properties();
 
     void setProperties(int sampleRate, int sampleSize, Time duration, int channels, int byteRate);
 
@@ -24,4 +24,4 @@ private:
     Ui::Properties *ui;
 };
 
-#endif // PROPERTIES_HPP
+#endif
