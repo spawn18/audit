@@ -124,7 +124,7 @@ void Editor::handleEnded()
 
 void Editor::handleTrackClick(double position)
 {
-    Time time = milliseconds(position * m_file.duration().asMiliseconds());
+    Time time(position * m_file.duration().asMicroseconds());
     ui->time->setText(time.asString());
     m_audio.setTime(time);
 }

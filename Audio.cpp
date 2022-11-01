@@ -84,6 +84,6 @@ Time Audio::getTime() const
     qint64 sample = m_file->pos() / 2.0;
     double ratio = sample / static_cast<double>(m_file->totalSamples()-1);
     qint64 mc = round(ratio * m_file->duration().asMicroseconds());
-    return microseconds(mc);
+    return Time(mc);
 }
 

@@ -118,7 +118,7 @@ qint64 Wave::writeData(const char *data, qint64 len)
 Time Wave::duration() const
 {
     qint64 mc = ((m_samples.size() * (m_bitsPerSample/8)) / ((long double)m_byteRate)) * 1'000'000;
-    return microseconds(mc);
+    return Time(mc);
 }
 
 qint16& Wave::operator[](const quint64 i)
