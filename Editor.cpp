@@ -171,7 +171,7 @@ void Editor::erase()
         qint64 begin = selection.begin * (m_file.totalSamples()-1);
         qint64 end = selection.end * (m_file.totalSamples()-1);
 
-        for(int i = selection.begin; i <= selection.end; i++)
+        for(int i = begin; i <= end; i++)
             m_file[i] = 0;
 
         ui->track->updateSelection(selection, m_file);
