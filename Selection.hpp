@@ -16,4 +16,4 @@ struct Selection
 };
 
 
-#endif // SELECTION_HPP
+#endif
