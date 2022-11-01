@@ -11,10 +11,7 @@ class Audio : public QObject
     Q_OBJECT
 
 public:
-
-    explicit Audio(Wave* file, QObject *parent = nullptr);
-
-    Audio() = default;
+     Audio() = default;
     ~Audio();
 
     void setSource(Wave* file);

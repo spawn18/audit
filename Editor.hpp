@@ -22,8 +22,8 @@ class Editor : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Editor(QWidget *parent = nullptr);
-            ~Editor();
+        Editor();
+        ~Editor();
 
 private slots:
 

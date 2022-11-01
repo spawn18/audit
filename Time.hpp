@@ -3,14 +3,11 @@
 
 #include <QtGlobal>
 
-
-
-
 class Time
 {
 public:
 
-     explicit Time(qint64);
+    explicit Time(qint64);
 
     Time() = default;
     ~Time() = default;

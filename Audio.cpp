@@ -1,12 +1,5 @@
 #include "Audio.hpp"
 
-Audio::Audio(Wave* file, QObject *parent) : QObject(parent)
-{
-    setSource(file);
-    connect(m_output, SIGNAL(notify()), this, SIGNAL(played()));
-    connect(m_output, SIGNAL(stateChanged(QAudio::State)), this, SLOT(handleStateChange(QAudio::State)));
-}
-
 Audio::~Audio()
 {
     delete m_output;

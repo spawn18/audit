@@ -34,7 +34,6 @@ set(PROJECT_SOURCES
         Utils.hpp
         Utils.cpp
         Audio.cpp
-        TODO.txt
         Audio.hpp
         resources.qrc
 )

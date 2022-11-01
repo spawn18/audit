@@ -15,7 +15,7 @@
 #include "Utils.hpp"
 
 
-Editor::Editor(QWidget *parent) : QMainWindow(parent), ui(new Ui::Editor)
+Editor::Editor() : ui(new Ui::Editor)
 {
     ui->setupUi(this);
 
