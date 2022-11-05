@@ -111,7 +111,7 @@ void Editor::handlePlayed()
     Time time = m_audio.getTime();
     ui->time->setText(time.asString());
 
-    double position = static_cast<double>(time.asMiliseconds()) / m_file.duration().asMiliseconds();
+    double position = static_cast<double>(time.asMicroseconds()) / m_file.duration().asMicroseconds();
     ui->track->setPosition(position);
 }
 

@@ -20,15 +20,11 @@ public:
     void pause();
     void stop();
 
-    bool isPlaying();
-
     void setTime(const Time&);
     Time getTime() const;
 
-
 public slots:
     void setVolume(int);
-    void handleStateChange(QAudio::State);
 
 signals:
     void played();

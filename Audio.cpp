@@ -28,21 +28,19 @@ void Audio::setSource(Wave *file)
     m_output->setNotifyInterval(1);
 
     connect(m_output, SIGNAL(notify()), this, SIGNAL(played()));
-    connect(m_output, SIGNAL(stateChanged(QAudio::State)), this, SLOT(handleStateChange(QAudio::State)));
-}
-
-void Audio::handleStateChange(QAudio::State state)
-{
-    if(state == QAudio::IdleState)
+    connect(m_output, &QAudioOutput::stateChanged, [=](QAudio::State state)
     {
-        stop();
-        emit ended();
-    }
-    else if(state == QAudio::StoppedState)
-    {
-        if(m_output->error() != QAudio::NoError)
-            throw std::runtime_error("Error: audio error has occured");
-    }
+        if(state == QAudio::IdleState)
+        {
+            stop();
+            emit ended();
+        }
+        else if(state == QAudio::StoppedState)
+        {
+            if(m_output->error() != QAudio::NoError)
+                throw std::runtime_error("Error: audio error has occured");
+        }
+    });
 }
 
 void Audio::play()

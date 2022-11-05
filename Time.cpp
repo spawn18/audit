@@ -12,11 +12,6 @@ qint64 Time::asMicroseconds() const
     return m_microseconds;
 }
 
-qint32 Time::asMiliseconds() const
-{
-    return m_microseconds/1000;
-}
-
 QString Time::asString() const
 {
     int hours = (m_microseconds / 3'600'000'000) % 60;

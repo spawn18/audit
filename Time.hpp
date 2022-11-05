@@ -16,7 +16,6 @@ public:
     void fromMicroseconds(qint64);
 
     qint64 asMicroseconds() const;
-    qint32 asMiliseconds() const;
 
     QString asString() const;
 
